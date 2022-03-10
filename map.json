@@ -411,7 +411,7 @@
         {
          "name":"mapImage",
          "type":"string",
-         "value":"theatre.png"
+         "value":"map.png"
         }, 
         {
          "name":"mapName",
