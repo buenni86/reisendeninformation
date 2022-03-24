@@ -5,7 +5,7 @@ var isCoWebSiteOpened =  false;
 var urlTutorial = "https://db-planet.deutschebahn.com/pages/telefonie/apps/content/workadventure-erste-schritte";
 var urlFeedback = "https://forms.office.com/Pages/ResponsePage.aspx?id=nC2noeZJbU-a9lqvoRg7_f26WHDvlOFNi_8Y43fECOdUMDVDTUpUUDRONkxHMzdLQ09WRlQxUUZSMS4u";
 var urlMusik = "https://www.youtube-nocookie.com/embed/36YnV9STBqc?autoplay=1";
-var urlInfo = "https://forms.office.com/Pages/ResponsePage.aspx?id=nC2noeZJbU-a9lqvoRg7_f26WHDvlOFNi_8Y43fECOdUMDVDTUpUUDRONkxHMzdLQ09WRlQxUUZSMS4u";
+var urlInfo = "./Agenda.html";
 
 function closePopUp(){
     if (currentPopup !== undefined) {
@@ -19,6 +19,7 @@ var zoneTutorial = "tutorial";
 var zoneFeedback = "feedback";
 var zoneMusik = "musik";
 var zoneInfo = "info";
+var zoneInfo2 = "info2";
 
 WA.room.onEnterZone(zoneTutorial, () => {
    currentPopup =  WA.ui.openPopup("popUpTutorial","Tutorial ansehen?",[
@@ -84,7 +85,7 @@ WA.room.onLeaveZone(zoneMusik, () =>{
 })
 
 WA.room.onEnterZone(zoneInfo, () => {
-   currentPopup =  WA.ui.openPopup("BoardInfo","Sessionplan ansehen?!",[
+   currentPopup =  WA.ui.openPopup("BoardInfo","Agenda ansehen?!",[
         {
             label: "OK",
 			callback: (popup => {
@@ -96,6 +97,27 @@ WA.room.onEnterZone(zoneInfo, () => {
 })
 
 WA.room.onLeaveZone(zoneInfo, () =>{
+    closePopUp();
+
+    if (isCoWebSiteOpened) {
+        WA.nav.closeCoWebSite();
+        isCoWebSiteOpened = false;
+    }
+})
+
+WA.room.onEnterZone(zoneInfo2, () => {
+   currentPopup =  WA.ui.openPopup("BoardInfo2","Agenda ansehen?!",[
+        {
+            label: "OK",
+			callback: (popup => {
+                WA.nav.openCoWebSite(urlInfo, false, "autoplay; encrypted-media");
+                isCoWebSiteOpened = true;
+                closePopUp();
+            })
+        }]);
+})
+
+WA.room.onLeaveZone(zoneInfo2, () =>{
     closePopUp();
 
     if (isCoWebSiteOpened) {
