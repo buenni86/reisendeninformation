@@ -1342,7 +1342,7 @@
                         {
                          "name":"default",
                          "type":"string",
-                         "value":"https:\/\/garticphone.com"
+                         "value":""
                         }, 
                         {
                          "name":"label",
@@ -1365,7 +1365,7 @@
                         {
                          "name":"default",
                          "type":"string",
-                         "value":"https:\/\/skribbl.io\/"
+                         "value":""
                         }, 
                         {
                          "name":"label",
@@ -1388,7 +1388,7 @@
                         {
                          "name":"default",
                          "type":"string",
-                         "value":"https:\/\/playingcards.io\/game\/chess"
+                         "value":""
                         }, 
                         {
                          "name":"label",
@@ -1411,7 +1411,7 @@
                         {
                          "name":"default",
                          "type":"string",
-                         "value":"https:\/\/pong-2.com"
+                         "value":""
                         }, 
                         {
                          "name":"label",
@@ -1434,7 +1434,7 @@
                         {
                          "name":"default",
                          "type":"string",
-                         "value":"https:\/\/gamesnacks.com\/embed\/games\/billiardsclassic"
+                         "value":""
                         }, 
                         {
                          "name":"label",
